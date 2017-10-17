@@ -3,6 +3,10 @@
 
 import React from 'react'
 
-const App = () => <h1>Hello</h1>
+class App extends React.Component {
+	render() {
+		return React.createElement ('h1', null, 'hello world')
+	}
+}
 
 export default App
