@@ -34,6 +34,7 @@ class App extends React.Component {
 					<InputWidget update={this.update.bind(this)}/>
 				</div>
 				<Button>I <Heart/> React</Button>
+				<Title text="The title"/>
 			</div>
 		)
 	}
@@ -48,6 +49,19 @@ const Button = (props) =>
 class Heart extends React.Component {
 	render() {
 		return <span>&hearts;</span>
+	}
+}
+
+const Title = (props) => <h2>Title: {props.text}</h2>
+
+Title.propTypes = {
+	text(props, propName, component) {
+		if (!(propName in props)) {
+			return new Error (`missign ${propName}`)
+		}
+		if (props[propName].length < 6) {
+			return new Error (`${propName} was too short`)
+		}
 	}
 }
 
