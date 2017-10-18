@@ -33,6 +33,7 @@ class App extends React.Component {
 					<h2>{this.state.newText}</h2>
 					<InputWidget update={this.update.bind(this)}/>
 				</div>
+				<Button>I <Heart/> React</Button>
 			</div>
 		)
 	}
@@ -40,6 +41,15 @@ class App extends React.Component {
 
 const InputWidget = (props) =>
 	<input type="text" onChange={props.update}/>
+
+const Button = (props) =>
+	<button>{props.children}</button>
+
+class Heart extends React.Component {
+	render() {
+		return <span>&hearts;</span>
+	}
+}
 
 App.defaultProps = {
 	txt: 'this is the default text'
