@@ -30,14 +30,16 @@ class App extends React.Component {
 				<p>{cat}</p>
 				<p>{this.props.fruit}</p>
 				<div>
-					<input type="text"
-						onChange={this.update.bind(this)}/>
 					<h2>{this.state.newText}</h2>
+					<InputWidget update={this.update.bind(this)}/>
 				</div>
 			</div>
 		)
 	}
 }
+
+const InputWidget = (props) =>
+	<input type="text" onChange={props.update}/>
 
 App.defaultProps = {
 	txt: 'this is the default text'
