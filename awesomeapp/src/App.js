@@ -13,11 +13,22 @@ class App extends React.Component {
 		super()
 		this.state = {
 			newText: 'this is the state text'
+		},
+		this.state = {
+			a: '',
+			b: ''
 		}
 	}
 
 	update(event) {
 		this.setState({newText: event.target.value})
+	}
+
+	updateInput() {
+		this.setState({
+			a: this.a.refs.input.value,
+			b: this.refs.b.value
+		})
 	}
 
 	render() {
@@ -35,6 +46,17 @@ class App extends React.Component {
 				</div>
 				<Button>I <Heart/> React</Button>
 				<Title text="The title"/>
+				<div>
+					<Input
+						ref={component => this.a = component}
+						updateInput={this.updateInput.bind(this)}
+					/> {this.state.a}
+					<hr/>
+					<input type="text"
+						ref="b"
+						onChange={this.updateInput.bind(this)}
+					/> {this.state.b}
+				</div>
 			</div>
 		)
 	}
@@ -49,6 +71,12 @@ const Button = (props) =>
 class Heart extends React.Component {
 	render() {
 		return <span>&hearts;</span>
+	}
+}
+
+class Input extends React.Component {
+	render() {
+		return <input ref="input" type="text" onChange={this.props.update}/>
 	}
 }
 
