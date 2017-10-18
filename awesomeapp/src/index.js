@@ -5,6 +5,6 @@ import ReactDOM from 'react-dom'
 import App from './App'
 
 ReactDOM.render(
-	<App />,
+	<App cat="alma" fruit="korte"/>,
 	document.getElementById('root')
 )
