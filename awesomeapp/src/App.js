@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Wrapper from './Wrapper'
+import Lifecycle from './Lifecycle'
 
 // class App extends React.Component {
 // 	render() {
@@ -37,7 +38,7 @@ class App extends React.Component {
 		let cat = this.props.cat
 
 		return (
-			<div>
+			<div id="page">
 				<h1>{txt}</h1>
 				<p>{cat}</p>
 				<p>{this.props.fruit}</p>
@@ -59,6 +60,9 @@ class App extends React.Component {
 					/> {this.state.b}
 				</div>
 				<Wrapper/>
+				<div id="life">
+					<Lifecycle/>
+				</div>
 			</div>
 		)
 	}
