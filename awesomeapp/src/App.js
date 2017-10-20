@@ -3,6 +3,7 @@
 import React from 'react'
 import Wrapper from './Wrapper'
 import Lifecycle from './Lifecycle'
+import Starwars from './Mapandfilter'
 
 // class App extends React.Component {
 // 	render() {
@@ -15,7 +16,7 @@ class App extends React.Component {
 		super()
 		this.state = {
 			newText: 'this is the state text'
-		},
+		}
 		this.state = {
 			a: '',
 			b: ''
@@ -39,6 +40,7 @@ class App extends React.Component {
 
 		return (
 			<div id="page">
+				<Starwars/>
 				<h1>{txt}</h1>
 				<p>{cat}</p>
 				<p>{this.props.fruit}</p>

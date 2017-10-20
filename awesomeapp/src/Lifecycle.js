@@ -22,7 +22,7 @@ class Lifecycle extends React.Component {
 	}
 
 	render() {
-		console.log(this.state.increasing);
+		console.log(this.state.increasing)
 		return (
 			<button onClick={this.update.bind(this)}>
 				{this.props.val}
@@ -31,7 +31,7 @@ class Lifecycle extends React.Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		console.log(`prevProps: ${prevProps.val}`);
+		console.log(`prevProps: ${prevProps.val}`)
 	}
 }
 
