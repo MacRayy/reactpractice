@@ -4,6 +4,7 @@ import React from 'react'
 import Wrapper from './Wrapper'
 import Lifecycle from './Lifecycle'
 import Starwars from './Mapandfilter'
+import HOCApp from './HigherOrderComponents'
 
 // class App extends React.Component {
 // 	render() {
@@ -40,6 +41,8 @@ class App extends React.Component {
 
 		return (
 			<div id="page">
+				<HOCApp/>
+				<hr/>
 				<Starwars/>
 				<h1>{txt}</h1>
 				<p>{cat}</p>
